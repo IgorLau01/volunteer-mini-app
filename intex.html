@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Points</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .points {
+            font-size: 2rem;
+            color: #FF5722;
+            font-weight: bold;
+            margin: 20px;
+        }
+        .update-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .update-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Добро пожаловать, волонтер!</h1>
+    <p>Ваши текущие баллы:</p>
+    <div class="points" id="points">0</div>
+
+    <button class="update-button" id="updateButton">Обновить баллы</button>
+
+    <script>
+        // Изначальные баллы
+        let volunteerPoints = 100;  // Это можно будет менять по мере участия в мероприятиях
+
+        // Функция для обновления отображаемых баллов
+        function updatePoints() {
+            document.getElementById('points').textContent = volunteerPoints;
+        }
+
+        // Обработчик кнопки обновления
+        document.getElementById('updateButton').addEventListener('click', () => {
+            volunteerPoints += 10;  // Добавляем 10 баллов за участие в мероприятии
+            updatePoints();         // Обновляем отображение
+        });
+
+        // Изначальное обновление баллов на странице
+        updatePoints();
+    </script>
+
+</body>
+</html>
